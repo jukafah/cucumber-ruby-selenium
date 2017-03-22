@@ -15,7 +15,6 @@ class GooglePage < CommonPage
 
     search_results.each do |result|
       if(result.text.include?(expected_link))
-        puts("clicking result: #{result.text}")
         result.click
         break
       end
