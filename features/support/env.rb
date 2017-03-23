@@ -1,18 +1,23 @@
 require('selenium-webdriver')
 require('rspec/expectations')
 
-# TODO: Move away from global variables
-$driver = Selenium::WebDriver.for(:chrome)
-$driver.manage.timeouts.implicit_wait = 5
-
 module CustomWorld
 
+  # def driver
+  #   @driver ||= Selenium::WebDriver.for(:chrome)
+  # end
+
+  def get_driver
+    # driver
+    @driver ||= Selenium::WebDriver.for(:chrome)
+  end
+
   def common_page
-    CommonPage.new($driver)
+    CommonPage.new(@driver)
   end
 
   def google_page
-    GooglePage.new($driver)
+    GooglePage.new(@driver)
   end
 
 end

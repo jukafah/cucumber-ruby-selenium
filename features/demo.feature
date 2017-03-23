@@ -29,6 +29,3 @@ Feature: Demo
     When I search for "RubyMine"
     And select "JetBrains RubyMine" in the search results
     Then I am presented with the "https://www.jetbrains.com/ruby/" homepage
-
-
-# TODO: Add a method for ruby

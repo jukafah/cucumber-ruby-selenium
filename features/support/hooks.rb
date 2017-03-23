@@ -1,23 +1,16 @@
 Before do |scenario|
-  # page.driver.browser.manage.window.resize_to(1920,1080)
+
+  @driver = self.get_driver
+  @driver.manage.timeouts.implicit_wait = 5
+
 end
 
 After do |scenario|
-  ## logic that will run after each scenario
 
   if(scenario.failed?)
   # TODO: take screenshots
   end
 
+  @driver.quit
+
 end
-
-AfterStep do |scenario|
-  # logic that will run after each step in a scenario
-end
-
-
-
-
-
-
-
